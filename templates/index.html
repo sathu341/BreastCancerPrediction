@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{%  load static %} 
+{% block content %}
+
+<section >
+    <img src="{% static 'images/pic1.jpg' %}" style="width: 100%;
+    height: 550px;
+    position: relative;
+    z-index: 0;" class="img-fluid">
+    <div class="container" style="position:relative; top:-72px; ">
+        <div class="row" align="center">
+            <div class="col-lg-4" align="center">
+                <img src="{% static 'images/pic2.jpg' %}" width="200" height="200" class="rounded-circle">
+                <div class="card" style="width: 18rem;">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-4" align="center">
+                <img src="{% static 'images/pic4.jpg' %}" width="200" height="200" class="rounded-circle">
+                <div class="card" style="width: 18rem;">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Community</h5>
+                      <p class="card-text">“No one understands what it is like to live with cancer better than someone else who has cancer,” says Kelly Lange, who was diagnosed with metastatic breast cancer 15 years ago. Soon after, she started attending METAvivor support groups around her hometown of Annapolis, MD. Now she volunteers for the nonprofit. “When you’re newly diagnosed, it can be very reassuring to meet someone who has managed to live well with the disease.”</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-4" align="center">
+                <img src="{% static 'images/pic3.jpg' %}" width="200" height="200" class="rounded-circle">
+                <div class="card" style="width: 18rem;">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Cells</h5>
+                      <p class="card-text">
+                          Cancer starts when cells begin to grow out of control. 
+                        It’s important to understand that most breast lumps are benign and not cancer (malignant). Non-cancer breast tumors are abnormal growths, but they do not spread outside of the breast. They are not life threatening, but some types of benign breast lumps can increase a woman's risk of getting breast cancer. Any breast lump or change needs to be checked by a health care professional to find out if it is benign or malignant 
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+<section class="container">
+    <div class="row">
+        <div class="col-lg-12" algin="center">
+            <h1 align='center'>What can I do to reduce my risk of breast cancer?</h1>
+Research shows that lifestyle changes can decrease the risk of breast cancer, even in women at high risk. To lower your risk:
+
+Limit alcohol. The more alcohol you drink, the greater your risk of developing breast cancer. The general recommendation — based on research on the effect of alcohol on breast cancer risk — is to limit yourself to no more than one drink a day, as even small amounts increase risk.
+Maintain a healthy weight. If your weight is healthy, work to maintain that weight. If you need to lose weight, ask your doctor about healthy strategies to accomplish this. Reduce the number of calories you eat each day and slowly increase the amount of exercise.
+Be physically active. Physical activity can help you maintain a healthy weight, which helps prevent breast cancer. Most healthy adults should aim for at least 150 minutes a week of moderate aerobic activity or 75 minutes of vigorous aerobic activity weekly, plus strength training at least twice a week.
+Breast-feed. Breast-feeding might play a role in breast cancer prevention. The longer you breast-feed, the greater the protective effect.
+Limit postmenopausal hormone therapy. Combination hormone therapy may increase the risk of breast cancer. Talk with your doctor about the risks and benefits of hormone therapy. You might be able to manage your symptoms with nonhormonal therapies and medications. If you decide that the benefits of short-term hormone therapy outweigh the risks, use the lowest dose that works for you and continue to have your doctor monitor the length of time you're taking hormones.
+        </div>
+    </div>
+    
+</section>
+<hr>
+<br>
+<br>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6" algin="center">
+                  <img src="{% static 'images/pic4.jpg' %}" width="400" height="400">
+            </div>
+            <div class="col-lg-6"id="lg">
+                <form  method="post" action="/login">
+                    {% csrf_token %}
+                    <div class="row text-center">
+                        <!--row-->
+                        <h1>Login Here !</h1> 
+                         
+                            <div class="form-group  col-lg-4 ">
+                                <label for="_idusr" class="form-label">Username</label>
+                                <input type="text" id="_idusr" class="form-control"  placeholder="Username" name="usr" required>
+            
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label for="_idps" class="form-label">Password</label>
+                                <input type="password" id="_idps" class="form-control"  placeholder="Password" name="ps" required>
+            
+                            </div>
+                         
+                            
+                            <div class="form-group col-lg-12 text-center" align="center">
+                               <br>
+                                <input type="submit" class="btn btn-success" value="Submit" >
+            
+                            </div>
+                        
+                            <!--/row-->
+            
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

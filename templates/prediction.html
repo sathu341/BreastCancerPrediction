@@ -1,0 +1,80 @@
+{% extends 'homepage.html' %} 
+{% load static %}
+ {% block content %} 
+ <style>
+   table tr td input ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: rgb(189, 27, 27)!important;
+        opacity: 1; /* Firefox */
+      }
+ </style>
+ <div class="container" style="background-image:url({% static 'images/pic3.jpg' %}); background-repeat:no-repeat; background-size:cover;">
+<div class="row offset-1" algin="center">
+    <div class="col-lg-10 item-middle text-dark" algin="center">
+        <h1> Breast cancer Prediction Using ML  Enter the Data Click the Predict Button Known the Result Report</h1>
+        {{result}}
+        <form method="post" action="/predict" align="center" >
+            {% csrf_token %} 
+          <center> <table class="table table-striped table-hover table-primary form-group " algin="center">
+              <tr>
+                <td> Patient Name: <input type="text" class="form-control" name="pnt" placeholder="Patient Name"></td> 
+              </tr>
+                <tr>
+                    <td> <input type="text" class="form-control" name="inp1" placeholder="Radius Mean"></td> 
+                    <td><input type="text" class="form-control"  name="inp2" placeholder="texture_mean"></td> 
+                    <td><input type="text" class="form-control"  name="inp3" placeholder=" perimeter_mean "></td> 
+                    <td><input type="text"  class="form-control" name="inp4" placeholder=" area_mean "></td>
+                     <td><input type="text" class="form-control"  name="inp5" placeholder="smoothness_mean "></td>
+                      <td><input type="text" class="form-control"  name="inp6" placeholder="compactness_mean "></td>
+                </tr>
+                <tr>
+                   <td> <input type="text" class="form-control"  name="inp7" placeholder="concavity_mean"></td> 
+                   <td> <input type="text"  class="form-control" name="inp8" placeholder="concave points_mean"></td> 
+                   <td><input type="text" class="form-control"  name="inp9" placeholder="symmetry_mean"></td> 
+                   <td><input type="text"  class="form-control" name="inp10" placeholder="fractal_dimension_mean"></td> 
+                   <td><input type="text"  class="form-control" name="inp11" placeholder="radius_se"></td>
+                    <td><input type="text" class="form-control"  name="inp12" placeholder=" texture_se "></td>
+                    
+               </tr>
+               <tr>
+                   <td><input type="text" class="form-control"  name="inp13" placeholder="perimeter_se"></td>
+                   <td> <input type="text" class="form-control" name="inp14" placeholder="area_se"></td> 
+                   <td><input type="text"  class="form-control" name="inp15" placeholder="smoothness_se"></td> 
+                   <td><input type="text" class="form-control" name="inp16" placeholder="compactness_se"></td> 
+                   <td><input type="text"class="form-control"  name="inp17" placeholder="concavity_se"></td>
+                    <td><input type="text"class="form-control"  name="inp18" placeholder="compactness_se"></td>
+                    
+               </tr>
+               <tr>
+                   <td><input type="text" class="form-control"  name="inp19" placeholder="concave points_se"></td>
+                   <td> <input type="text" class="form-control"  name="inp20" placeholder="symmetry_se"></td> 
+                   <td><input type="text" class="form-control"  name="inp21" placeholder="fractal_dimension_se"></td> 
+                   <td><input type="text" class="form-control" name="inp22" placeholder="radius_worst"></td> 
+                   <td><input type="text" class="form-control"  name="inp23" placeholder="texture_worst"></td>
+                    <td><input type="text" class="form-control"  name="inp24" placeholder="perimeter_worst"></td>
+                   
+               </tr>
+               <tr>
+                   <td><input type="text" class="form-control"name="inp25" placeholder="smoothness_worst"></td>
+                   <td> <input type="text" class="form-control" name="inp26" placeholder="compactness_worst"></td> 
+                   <td> <input type="text" class="form-control" name="inp27" placeholder="concavity_worst"></td>
+                   <td><input type="text" class="form-control" name="inp28" placeholder="concave points_worst"></td> 
+                   <td><input type="text"  class="form-control"name="inp29" placeholder="symmetry_worst"></td> 
+                   <td><input type="text" class="form-control"name="inp30" placeholder="fractal_worst"></td>
+        
+               </tr>
+               <tr>
+                   <td colspan="7" class="text-center item-middle" algin="center">
+                       <input type="submit"   value="Predict" class="btn btn-dark">
+                   </td>
+               </tr>
+            </table>
+        </center> 
+        </form>
+
+    </div>
+</div>
+
+ </div>
+
+ 
+ {% endblock %}
